@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useState } from "react";
 import { Ecommerce } from "./components/Ecommerce";
 import { EcommerceContext } from "./components/EcommerseContext";
@@ -16,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Ecommerce />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
       </EcommerceContext>
